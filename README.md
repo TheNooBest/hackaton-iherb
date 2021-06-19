@@ -32,6 +32,12 @@
 $ npm install
 ```
 
+## Seeding
+
+```bash
+$ npm run seed:run
+```
+
 ## Running the app
 
 ```bash
