@@ -17,4 +17,8 @@ export class UsersService {
     public async findUserByUsername(username: string): Promise<User> {
         return this.userRepository.findOne({ username: username });
     }
+
+    public async save(user: User): Promise<User> {
+        return this.userRepository.save(user);
+    }
 }

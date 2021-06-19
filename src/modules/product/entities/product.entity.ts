@@ -1,9 +1,12 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
-@Entity()
+@Entity('product')
 export class Product {    
     @PrimaryGeneratedColumn()
     public id: number;
+
+    @Column()
+    public name: string;
 
     @Column({ name: 'vitamin_a' })
     public vitaminA?: number;

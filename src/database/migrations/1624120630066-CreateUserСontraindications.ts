@@ -1,7 +1,7 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class CreateUserRecTable1624111036087 implements MigrationInterface {
-    private readonly tableName: string = 'user_recommendations';
+export class CreateUserСontraindications1624120630066 implements MigrationInterface {
+    private readonly tableName: string = 'user_contraindications';
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
@@ -17,21 +17,16 @@ export class CreateUserRecTable1624111036087 implements MigrationInterface {
                     type: 'int',
                     isNullable: false,
                 },
-                {
-                    name: 'count',
-                    type: 'int',
-                    isNullable: false,
-                },
             ],
             indices: [
                 {
-                    name: 'rec_user_id_index',
+                    name: 'con_user_id_index',
                     columnNames: ['user_id'],
                 }
             ],
             uniques: [
                 {
-                    name: 'rec_user_product_unique',
+                    name: 'con_user_product_unique',
                     columnNames: ['user_id', 'product_id'],
                 }
             ],
@@ -41,4 +36,5 @@ export class CreateUserRecTable1624111036087 implements MigrationInterface {
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable(this.tableName, true, true, true);
     }
+
 }
