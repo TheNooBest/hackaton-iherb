@@ -3,6 +3,7 @@ import { ConfigModule as CoreConfigModule } from '@nestjs/config';
 
 import dbConfig from './db.config';
 import appConfig from './app.config';
+import jwtConfig from './jwt.config';
 
 @Module({
     imports: [
@@ -13,6 +14,7 @@ import appConfig from './app.config';
             load: [
                 dbConfig,
                 appConfig,
+                jwtConfig,
             ]
         })
     ],

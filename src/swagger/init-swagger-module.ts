@@ -20,6 +20,7 @@ export async function initSwaggerModule(app: INestApplication, options: SwaggerM
         .setTitle('IHerb solution server')
         .setDescription('API for server of solution for hackaton')
         .setVersion(getApiVersion())
+        .addBearerAuth()
         .build();
 
     const document = SwaggerModule.createDocument(app, documentOptions);
